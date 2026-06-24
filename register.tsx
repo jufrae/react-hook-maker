@@ -8,6 +8,7 @@ import { Spinner } from '@/components/ui/spinner';
 import AuthLayout from '@/layouts/auth-layout';
 import { login } from '@/routes';
 import { store } from '@/routes/register';
+import { IMaskInput } from 'react-imask';
 
 export default function Register() {
     return (
@@ -137,6 +138,13 @@ export default function Register() {
                     </>
                 )}
             </Form>
+            <IMaskInput
+            mask="+{7} (000) 000-00-00"
+            value=""
+            onAccept={(value, mask) => console.log(value)}
+            placeholder="+7 (___) ___-__-__"
+            className="input"
+        />
         </AuthLayout>
     );
 }
